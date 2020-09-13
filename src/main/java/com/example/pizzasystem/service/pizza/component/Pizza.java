@@ -2,6 +2,8 @@ package com.example.pizzasystem.service.pizza.component;
 
 import com.example.pizzasystem.service.pizza.topping.Topping;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 
@@ -13,21 +15,38 @@ import java.util.ArrayList;
  * @last-check-in anlowee
  * @date 2020/9/11
  */
-@Data
 public abstract class Pizza {
 
+    @Setter@Getter
     protected String name;
+    @Setter@Getter
     protected String dough;
+    @Setter@Getter
     protected String sauce;
+    @Setter@Getter
     protected ArrayList<Topping> toppings = new ArrayList<>();
+
+    public Pizza() {
+        name = "a undefined pizza";
+        dough = "a undefined dough";
+        sauce = "a undefined sauce";
+    }
 
     public void description() {
         // TODO add toppings' description
-        System.out.println(name + "\n" + dough + "\n" + sauce);
+        System.out.println(name + "\n"
+                + dough + "\n"
+                + sauce
+        );
+        System.out.println(prepare());
+        System.out.println(bake());
+        System.out.println(cut());
+        System.out.println(box());
     }
-    public abstract void prepare();
-    public abstract void bake();
-    public abstract void cut();
-    public abstract void box();
+
+    public abstract String prepare();
+    public abstract String bake();
+    public abstract String cut();
+    public abstract String box();
 
 }

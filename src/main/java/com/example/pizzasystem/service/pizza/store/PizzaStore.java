@@ -13,7 +13,6 @@ import com.example.pizzasystem.service.pizza.order.PizzaOrder;
  */
 public abstract class PizzaStore {
 
-    // TODO the type should be adapted to concrete things
     public Pizza orderPizza(PizzaOrder pizzaOrder) {
         Pizza pizza;
         pizza = createPizza(pizzaOrder);
