@@ -1,6 +1,7 @@
 package com.example.pizzasystem.service.pizza.decorator.box;
 
 import com.example.pizzasystem.service.pizza.base.Pizza;
+import com.example.pizzasystem.service.pizza.menu.Menu;
 
 /**
  * @author https://github.com/anlowee
@@ -40,5 +41,10 @@ public class Dine extends Pizza {
     @Override
     public String box() {
         return pizza.box() + ", dine without box";
+    }
+
+    @Override
+    public Double cost() {
+        return pizza.cost();
     }
 }

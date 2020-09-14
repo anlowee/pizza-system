@@ -41,4 +41,9 @@ public class TwelveSlices extends Pizza {
     public String box() {
         return pizza.box();
     }
+
+    @Override
+    public Double cost() {
+        return pizza.cost();
+    }
 }

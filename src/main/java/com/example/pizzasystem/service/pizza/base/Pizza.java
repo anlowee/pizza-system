@@ -42,11 +42,13 @@ public abstract class Pizza {
         System.out.println(bake());
         System.out.println(cut());
         System.out.println(box());
+        System.out.printf("total cost: %.2f\n", cost());
     }
 
     public abstract String prepare();
     public abstract String bake();
     public abstract String cut();
     public abstract String box();
+    public abstract Double cost();
 
 }

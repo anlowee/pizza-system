@@ -42,4 +42,9 @@ public class HighTemperature extends Pizza {
         return pizza.box();
     }
 
+    @Override
+    public Double cost() {
+        return pizza.cost();
+    }
+
 }

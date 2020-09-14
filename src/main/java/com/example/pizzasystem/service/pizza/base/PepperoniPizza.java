@@ -1,6 +1,7 @@
 package com.example.pizzasystem.service.pizza.base;
 
 import com.example.pizzasystem.service.pizza.ingredient.factory.PizzaIngredientFactory;
+import com.example.pizzasystem.service.pizza.menu.Menu;
 import lombok.Setter;
 
 /**
@@ -42,5 +43,10 @@ public class PepperoniPizza extends Pizza {
     @Override
     public String box() {
         return "boxing a pepperoni pizza";
+    }
+
+    @Override
+    public Double cost() {
+        return Menu.getInstance().getPepperoniPizzaPrice();
     }
 }
