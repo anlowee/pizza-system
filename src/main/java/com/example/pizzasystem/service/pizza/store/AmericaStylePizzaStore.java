@@ -1,5 +1,6 @@
 package com.example.pizzasystem.service.pizza.store;
 
+import com.example.pizzasystem.service.pizza.base.PepperoniPizza;
 import com.example.pizzasystem.service.pizza.base.Pizza;
 import com.example.pizzasystem.service.pizza.base.CheesePizza;
 import com.example.pizzasystem.service.pizza.decorator.bake.HighTemperature;
@@ -26,6 +27,9 @@ public class AmericaStylePizzaStore extends PizzaStore {
         switch (type) {
             case "Cheese":
                 pizza = new CheesePizza(new AmericaStylePizzaIngredientFactory());
+                break;
+            case "Pepperoni":
+                pizza = new PepperoniPizza(new AmericaStylePizzaIngredientFactory());
                 break;
             default:
                 break;

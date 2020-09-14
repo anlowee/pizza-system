@@ -1,6 +1,7 @@
 package com.example.pizzasystem;
 
 import com.example.pizzasystem.service.pizza.base.Pizza;
+import com.example.pizzasystem.service.pizza.menu.Menu;
 import com.example.pizzasystem.service.pizza.order.PizzaOrder;
 import com.example.pizzasystem.service.pizza.store.AmericaStylePizzaStore;
 import com.example.pizzasystem.service.pizza.store.PizzaStore;
@@ -16,7 +17,7 @@ class PizzaSystemApplicationTests {
     void contextLoads() {
         PizzaStore pizzaStore = new AmericaStylePizzaStore();
         PizzaOrder pizzaOrder = new PizzaOrder();
-        pizzaOrder.setType("Cheese");
+        pizzaOrder.setType("Pepperoni");
         ArrayList<String> additions = new ArrayList<>();
         additions.add("Large Size");
         additions.add("More Cheese");

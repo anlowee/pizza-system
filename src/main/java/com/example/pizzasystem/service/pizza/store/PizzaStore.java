@@ -10,6 +10,7 @@ import com.example.pizzasystem.service.pizza.decorator.cut.TwelveSlices;
 import com.example.pizzasystem.service.pizza.decorator.prepare.LargeSize;
 import com.example.pizzasystem.service.pizza.decorator.prepare.MoreCheese;
 import com.example.pizzasystem.service.pizza.decorator.prepare.MoreSauce;
+import com.example.pizzasystem.service.pizza.decorator.prepare.MoreToppings;
 import com.example.pizzasystem.service.pizza.order.PizzaOrder;
 
 /**
@@ -36,6 +37,9 @@ public abstract class PizzaStore {
                     break;
                 case "More Sauce":
                     pizza = new MoreSauce(pizza);
+                    break;
+                case "More Toppings":
+                    pizza = new MoreToppings(pizza);
                     break;
                 // third step is to set bake method
                 case "High Temperature":
@@ -65,6 +69,11 @@ public abstract class PizzaStore {
         return pizza;
     }
 
+    /**
+     * factory method
+     * @param type base pizza type
+     * @return a pizza
+     */
     abstract Pizza createPizza(String type);
 
 }
