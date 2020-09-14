@@ -15,6 +15,7 @@ import java.util.ArrayList;
 @Data
 public class PizzaOrder {
 
+    private String type;
     private ArrayList<String> additions;
 
 }
