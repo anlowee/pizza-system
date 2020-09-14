@@ -72,7 +72,7 @@ public abstract class PizzaStore {
     /**
      * factory method
      * @param type base pizza type
-     * @return a pizza
+     * @return a pizzal
      */
     abstract Pizza createPizza(String type);
 
