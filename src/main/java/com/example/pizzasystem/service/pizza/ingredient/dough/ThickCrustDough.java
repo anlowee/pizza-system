@@ -8,10 +8,10 @@ package com.example.pizzasystem.service.pizza.ingredient.dough;
  * @last-check-in anlowee
  * @date 2020/9/14
  */
-public class ThinCrustDough implements Dough {
+public class ThickCrustDough implements Dough {
     @Override
     public String prepare() {
-        // use in us style store
-        return "use thin crust dough";
+        // use in italy style store
+        return "use thick crust dough";
     }
 }

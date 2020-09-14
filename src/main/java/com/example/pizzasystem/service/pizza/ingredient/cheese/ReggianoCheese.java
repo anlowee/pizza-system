@@ -1,4 +1,4 @@
-package com.example.pizzasystem.service.pizza.ingredient.dough;
+package com.example.pizzasystem.service.pizza.ingredient.cheese;
 
 /**
  * @author https://github.com/anlowee
@@ -8,10 +8,10 @@ package com.example.pizzasystem.service.pizza.ingredient.dough;
  * @last-check-in anlowee
  * @date 2020/9/14
  */
-public class ThinCrustDough implements Dough {
+public class ReggianoCheese implements Cheese {
     @Override
     public String prepare() {
         // use in us style store
-        return "use thin crust dough";
+        return "use reggiano cheese";
     }
 }

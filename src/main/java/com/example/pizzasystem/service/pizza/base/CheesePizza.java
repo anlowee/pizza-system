@@ -17,7 +17,8 @@ public class CheesePizza extends Pizza {
     public CheesePizza(PizzaIngredientFactory pizzaIngredientFactory) {
         name = "cheese pizza";
         dough = pizzaIngredientFactory.createDough();
-        sauce = "marinara sauce";
+        cheese = pizzaIngredientFactory.createCheese();
+        sauce = pizzaIngredientFactory.createSauce();
     }
 
     @Override

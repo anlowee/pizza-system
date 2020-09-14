@@ -1,6 +1,8 @@
 package com.example.pizzasystem.service.pizza.ingredient.factory;
 
+import com.example.pizzasystem.service.pizza.ingredient.cheese.Cheese;
 import com.example.pizzasystem.service.pizza.ingredient.dough.Dough;
+import com.example.pizzasystem.service.pizza.ingredient.sauce.Sauce;
 
 /**
  * @author https://github.com/anlowee
@@ -13,5 +15,7 @@ import com.example.pizzasystem.service.pizza.ingredient.dough.Dough;
 public interface PizzaIngredientFactory {
 
     Dough createDough();
+    Cheese createCheese();
+    Sauce createSauce();
 
 }

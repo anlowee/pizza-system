@@ -1,7 +1,11 @@
 package com.example.pizzasystem.service.pizza.ingredient.factory;
 
+import com.example.pizzasystem.service.pizza.ingredient.cheese.Cheese;
+import com.example.pizzasystem.service.pizza.ingredient.cheese.ReggianoCheese;
 import com.example.pizzasystem.service.pizza.ingredient.dough.Dough;
 import com.example.pizzasystem.service.pizza.ingredient.dough.ThinCrustDough;
+import com.example.pizzasystem.service.pizza.ingredient.sauce.MarinaraSauce;
+import com.example.pizzasystem.service.pizza.ingredient.sauce.Sauce;
 
 /**
  * @author https://github.com/anlowee
@@ -15,5 +19,15 @@ public class AmericaStylePizzaIngredientFactory implements PizzaIngredientFactor
     @Override
     public Dough createDough() {
         return new ThinCrustDough();
+    }
+
+    @Override
+    public Cheese createCheese() {
+        return new ReggianoCheese();
+    }
+
+    @Override
+    public Sauce createSauce() {
+        return new MarinaraSauce();
     }
 }

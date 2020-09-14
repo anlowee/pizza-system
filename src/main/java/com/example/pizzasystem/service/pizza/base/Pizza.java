@@ -1,7 +1,8 @@
 package com.example.pizzasystem.service.pizza.base;
 
+import com.example.pizzasystem.service.pizza.ingredient.cheese.Cheese;
 import com.example.pizzasystem.service.pizza.ingredient.dough.Dough;
-import com.example.pizzasystem.service.pizza.topping.Topping;
+import com.example.pizzasystem.service.pizza.ingredient.sauce.Sauce;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,20 +24,19 @@ public abstract class Pizza {
     @Setter@Getter
     protected Dough dough;
     @Setter@Getter
-    protected String sauce;
+    protected Cheese cheese;
     @Setter@Getter
-    protected ArrayList<Topping> toppings = new ArrayList<>();
+    protected Sauce sauce;
 
     public Pizza() {
         name = "a undefined pizza";
-        sauce = "a undefined sauce";
     }
 
     public void description() {
-        // TODO add toppings' description
         System.out.println(name + "\n"
-                + dough + "\n"
-                + sauce
+                + dough.prepare() + "\n"
+                + cheese.prepare() + "\n"
+                + sauce.prepare()
         );
         System.out.println(prepare());
         System.out.println(bake());

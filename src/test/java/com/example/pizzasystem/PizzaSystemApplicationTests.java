@@ -24,7 +24,6 @@ class PizzaSystemApplicationTests {
         pizzaOrder.setAdditions(additions);
         Pizza pizza = pizzaStore.createPizza(pizzaOrder);
         pizza.description();
-        System.out.println(pizza.getDough().prepare());
     }
 
 }

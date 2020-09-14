@@ -18,8 +18,8 @@ public class HighTemperature extends Pizza {
         this.pizza = pizza;
         this.name = pizza.getName();
         this.dough = pizza.getDough();
+        this.cheese = pizza.getCheese();
         this.sauce = pizza.getSauce();
-        this.toppings = pizza.getToppings();
     }
 
     @Override
