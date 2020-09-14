@@ -1,39 +1,37 @@
 package com.example.pizzasystem.service.pizza.store;
 
+import com.example.pizzasystem.service.pizza.base.CheesePizza;
 import com.example.pizzasystem.service.pizza.base.PepperoniPizza;
 import com.example.pizzasystem.service.pizza.base.Pizza;
-import com.example.pizzasystem.service.pizza.base.CheesePizza;
 import com.example.pizzasystem.service.pizza.decorator.bake.HighTemperature;
 import com.example.pizzasystem.service.pizza.decorator.bake.LongTime;
 import com.example.pizzasystem.service.pizza.decorator.box.Dine;
 import com.example.pizzasystem.service.pizza.decorator.box.TakeOut;
 import com.example.pizzasystem.service.pizza.decorator.cut.TenSlices;
 import com.example.pizzasystem.service.pizza.decorator.cut.TwelveSlices;
-import com.example.pizzasystem.service.pizza.decorator.prepare.LargeSize;
-import com.example.pizzasystem.service.pizza.decorator.prepare.MoreCheese;
-import com.example.pizzasystem.service.pizza.decorator.prepare.MoreSauce;
-import com.example.pizzasystem.service.pizza.decorator.prepare.MoreToppings;
+import com.example.pizzasystem.service.pizza.decorator.prepare.*;
 import com.example.pizzasystem.service.pizza.ingredient.factory.AmericaStylePizzaIngredientFactory;
+import com.example.pizzasystem.service.pizza.ingredient.factory.ItalyStylePizzaIngredientFactory;
 import com.example.pizzasystem.service.pizza.order.PizzaOrder;
 
 /**
  * @author https://github.com/anlowee
  * @version 1.0
- * @date 2020/9/11
+ * @date 2020/9/14
  * @introduction
  * @last-check-in anlowee
- * @date 2020/9/11
+ * @date 2020/9/14
  */
-public class AmericaStylePizzaStore extends PizzaStore {
+public class ItalyStylePizzaStore extends PizzaStore {
     @Override
-    public Pizza createPizza(PizzaOrder pizzaOrder) {
+    Pizza createPizza(PizzaOrder pizzaOrder) {
         Pizza pizza = null;
         switch (pizzaOrder.getType()) {
             case "Cheese":
-                pizza = new CheesePizza(new AmericaStylePizzaIngredientFactory());
+                pizza = new CheesePizza(new ItalyStylePizzaIngredientFactory());
                 break;
             case "Pepperoni":
-                pizza = new PepperoniPizza(new AmericaStylePizzaIngredientFactory());
+                pizza = new PepperoniPizza(new ItalyStylePizzaIngredientFactory());
                 break;
             default:
                 break;
@@ -53,6 +51,10 @@ public class AmericaStylePizzaStore extends PizzaStore {
                     break;
                 case "More Toppings":
                     pizza = new MoreToppings(pizza);
+                    break;
+                // italy style special offer
+                case "More Pepperoni":
+                    pizza = new MorePepperoni(pizza);
                     break;
                 // third step is to set bake method
                 case "High Temperature":

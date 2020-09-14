@@ -28,6 +28,8 @@ public class Menu {
     private Double moreSaucePrice;
     @Setter@Getter
     private Double moreToppingsPrice;
+    @Setter@Getter
+    private Double morePepperoniPrice;
 
     private Menu() {
         cheesePizzaPrice = 6.99;
@@ -37,6 +39,7 @@ public class Menu {
         moreCheesePrice = 1.99;
         moreSaucePrice = 0.99;
         moreToppingsPrice = 2.99;
+        morePepperoniPrice = 1.99;
     }
 
     public static Menu getInstance() {
