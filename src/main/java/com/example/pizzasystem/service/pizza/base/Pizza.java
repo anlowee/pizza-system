@@ -42,7 +42,7 @@ public abstract class Pizza {
         System.out.println(bake());
         System.out.println(cut());
         System.out.println(box());
-        System.out.printf("total cost: %.2f\n", cost());
+        System.out.printf("cost: %.2f\n", cost());
     }
 
     public abstract String prepare();
