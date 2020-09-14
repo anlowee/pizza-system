@@ -1,6 +1,6 @@
-package com.example.pizzasystem.service.pizza.component.decorator.concrettedecorator.bake;
+package com.example.pizzasystem.service.pizza.decorator.bake;
 
-import com.example.pizzasystem.service.pizza.component.Pizza;
+import com.example.pizzasystem.service.pizza.base.Pizza;
 
 /**
  * @author https://github.com/anlowee
@@ -10,11 +10,11 @@ import com.example.pizzasystem.service.pizza.component.Pizza;
  * @last-check-in anlowee
  * @date 2020/9/13
  */
-public class HighTemperature extends Pizza {
+public class LongTime extends Pizza {
 
     Pizza pizza;
 
-    public HighTemperature(Pizza pizza) {
+    public LongTime(Pizza pizza) {
         this.pizza = pizza;
         this.name = pizza.getName();
         this.dough = pizza.getDough();
@@ -29,7 +29,7 @@ public class HighTemperature extends Pizza {
 
     @Override
     public String bake() {
-        return pizza.bake() + ", bake at 500C";
+        return pizza.bake() + ", bake for 45 minutes";
     }
 
     @Override
@@ -41,5 +41,4 @@ public class HighTemperature extends Pizza {
     public String box() {
         return pizza.box();
     }
-
 }

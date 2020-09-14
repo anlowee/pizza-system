@@ -1,6 +1,6 @@
 package com.example.pizzasystem;
 
-import com.example.pizzasystem.service.pizza.component.Pizza;
+import com.example.pizzasystem.service.pizza.base.Pizza;
 import com.example.pizzasystem.service.pizza.order.PizzaOrder;
 import com.example.pizzasystem.service.pizza.store.AmericaStylePizzaStore;
 import com.example.pizzasystem.service.pizza.store.PizzaStore;

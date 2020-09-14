@@ -1,4 +1,4 @@
-package com.example.pizzasystem.service.pizza.component;
+package com.example.pizzasystem.service.pizza.base;
 
 import com.example.pizzasystem.service.pizza.ingredient.dough.Dough;
 import com.example.pizzasystem.service.pizza.topping.Topping;

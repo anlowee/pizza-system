@@ -1,6 +1,6 @@
-package com.example.pizzasystem.service.pizza.component.decorator.concrettedecorator.bake;
+package com.example.pizzasystem.service.pizza.decorator.cut;
 
-import com.example.pizzasystem.service.pizza.component.Pizza;
+import com.example.pizzasystem.service.pizza.base.Pizza;
 
 /**
  * @author https://github.com/anlowee
@@ -10,11 +10,11 @@ import com.example.pizzasystem.service.pizza.component.Pizza;
  * @last-check-in anlowee
  * @date 2020/9/13
  */
-public class LongTime extends Pizza {
+public class TenSlices extends Pizza {
 
     Pizza pizza;
 
-    public LongTime(Pizza pizza) {
+    public TenSlices(Pizza pizza) {
         this.pizza = pizza;
         this.name = pizza.getName();
         this.dough = pizza.getDough();
@@ -29,12 +29,12 @@ public class LongTime extends Pizza {
 
     @Override
     public String bake() {
-        return pizza.bake() + ", bake for 45 minutes";
+        return pizza.bake();
     }
 
     @Override
     public String cut() {
-        return pizza.cut();
+        return pizza.cut() + ", cut to 10 slices";
     }
 
     @Override

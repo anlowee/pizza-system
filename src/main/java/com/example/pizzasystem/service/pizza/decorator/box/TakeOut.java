@@ -1,6 +1,6 @@
-package com.example.pizzasystem.service.pizza.component.decorator.concrettedecorator.box;
+package com.example.pizzasystem.service.pizza.decorator.box;
 
-import com.example.pizzasystem.service.pizza.component.Pizza;
+import com.example.pizzasystem.service.pizza.base.Pizza;
 
 /**
  * @author https://github.com/anlowee
@@ -10,11 +10,11 @@ import com.example.pizzasystem.service.pizza.component.Pizza;
  * @last-check-in anlowee
  * @date 2020/9/13
  */
-public class Dine extends Pizza {
+public class TakeOut extends Pizza {
 
     Pizza pizza;
 
-    public Dine(Pizza pizza) {
+    public TakeOut(Pizza pizza) {
         this.pizza = pizza;
         this.name = pizza.getName();
         this.dough = pizza.getDough();
@@ -39,6 +39,6 @@ public class Dine extends Pizza {
 
     @Override
     public String box() {
-        return pizza.box() + ", dine without box";
+        return pizza.box() + ", take out with box";
     }
 }

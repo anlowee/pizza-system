@@ -1,6 +1,6 @@
-package com.example.pizzasystem.service.pizza.component.decorator.concrettedecorator.cut;
+package com.example.pizzasystem.service.pizza.decorator.cut;
 
-import com.example.pizzasystem.service.pizza.component.Pizza;
+import com.example.pizzasystem.service.pizza.base.Pizza;
 
 /**
  * @author https://github.com/anlowee

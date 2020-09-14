@@ -1,13 +1,13 @@
 package com.example.pizzasystem.service.pizza.store;
 
-import com.example.pizzasystem.service.pizza.component.Pizza;
-import com.example.pizzasystem.service.pizza.component.concretecomponent.america.AmericaStylePizza;
-import com.example.pizzasystem.service.pizza.component.decorator.concrettedecorator.bake.HighTemperature;
-import com.example.pizzasystem.service.pizza.component.decorator.concrettedecorator.bake.LongTime;
-import com.example.pizzasystem.service.pizza.component.decorator.concrettedecorator.box.Dine;
-import com.example.pizzasystem.service.pizza.component.decorator.concrettedecorator.box.TakeOut;
-import com.example.pizzasystem.service.pizza.component.decorator.concrettedecorator.cut.TenSlices;
-import com.example.pizzasystem.service.pizza.component.decorator.concrettedecorator.cut.TwelveSlices;
+import com.example.pizzasystem.service.pizza.base.Pizza;
+import com.example.pizzasystem.service.pizza.base.CheesePizza;
+import com.example.pizzasystem.service.pizza.decorator.bake.HighTemperature;
+import com.example.pizzasystem.service.pizza.decorator.bake.LongTime;
+import com.example.pizzasystem.service.pizza.decorator.box.Dine;
+import com.example.pizzasystem.service.pizza.decorator.box.TakeOut;
+import com.example.pizzasystem.service.pizza.decorator.cut.TenSlices;
+import com.example.pizzasystem.service.pizza.decorator.cut.TwelveSlices;
 import com.example.pizzasystem.service.pizza.ingredient.factory.AmericaStylePizzaIngredientFactory;
 import com.example.pizzasystem.service.pizza.order.PizzaOrder;
 
@@ -22,7 +22,7 @@ import com.example.pizzasystem.service.pizza.order.PizzaOrder;
 public class AmericaStylePizzaStore implements PizzaStore {
     @Override
     public Pizza createPizza(PizzaOrder pizzaOrder) {
-        Pizza pizza = new AmericaStylePizza(new AmericaStylePizzaIngredientFactory());
+        Pizza pizza = new CheesePizza(new AmericaStylePizzaIngredientFactory());
         for (String addition : pizzaOrder.getAdditions()) {
             switch (addition) {
                 // first step is to choose a base-type of pizza in america-style
