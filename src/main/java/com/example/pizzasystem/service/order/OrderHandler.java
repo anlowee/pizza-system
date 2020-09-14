@@ -1,7 +1,7 @@
-package com.example.pizzasystem.service.pizza.order;
+package com.example.pizzasystem.service.order;
 
 import com.example.pizzasystem.service.pizza.base.Pizza;
-import com.example.pizzasystem.service.pizza.order.order.Order;
+import com.example.pizzasystem.service.order.order.Order;
 import lombok.Setter;
 
 import java.util.List;

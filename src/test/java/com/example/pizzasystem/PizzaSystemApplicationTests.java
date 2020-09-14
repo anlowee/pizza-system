@@ -1,9 +1,11 @@
 package com.example.pizzasystem;
 
-import com.example.pizzasystem.service.pizza.order.OrderHandler;
-import com.example.pizzasystem.service.pizza.order.PizzaOrder;
-import com.example.pizzasystem.service.pizza.order.order.ItalyStylePizzaStoreOrder;
-import com.example.pizzasystem.service.pizza.order.order.Order;
+import com.example.pizzasystem.service.beverage.base.Beverage;
+import com.example.pizzasystem.service.beverage.factory.BeverageFactory;
+import com.example.pizzasystem.service.order.OrderHandler;
+import com.example.pizzasystem.service.order.BaseOrder;
+import com.example.pizzasystem.service.order.order.ItalyStylePizzaStoreOrder;
+import com.example.pizzasystem.service.order.order.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -15,8 +17,8 @@ class PizzaSystemApplicationTests {
 
     @Test
     void contextLoads() {
-        PizzaOrder pizzaOrder = new PizzaOrder();
-        pizzaOrder.setType("Pepperoni");
+        BaseOrder baseOrder = new BaseOrder();
+        baseOrder.setType("Pepperoni");
         ArrayList<String> additions = new ArrayList<>();
         additions.add("Large Size");
         additions.add("More Cheese");
@@ -26,16 +28,28 @@ class PizzaSystemApplicationTests {
         additions.add("Long Time");
         additions.add("10 Slices");
         additions.add("Dine");
-        pizzaOrder.setAdditions(additions);
+        baseOrder.setAdditions(additions);
 
-        List<PizzaOrder> pizzaOrders = new ArrayList<>();
-        pizzaOrders.add(pizzaOrder);
-        pizzaOrders.add(pizzaOrder);
+        List<BaseOrder> baseOrders = new ArrayList<>();
+        baseOrders.add(baseOrder);
+        baseOrders.add(baseOrder);
 
-        Order order = new ItalyStylePizzaStoreOrder(pizzaOrders);
+        Order order = new ItalyStylePizzaStoreOrder(baseOrders);
         OrderHandler orderHandler = new OrderHandler();
         orderHandler.setOrder(order);
         orderHandler.handleOrder();
+
+        BaseOrder baseOrder1 = new BaseOrder();
+        baseOrder1.setType("Milk Tea");
+        ArrayList<String> additions1 = new ArrayList<>();
+        additions1.add("Milk");
+        additions1.add("Mocha");
+        additions1.add("Soy");
+        additions1.add("Whip");
+        baseOrder1.setAdditions(additions1);
+        BeverageFactory beverageFactory = new BeverageFactory();
+        Beverage beverage = beverageFactory.createBeverage(baseOrder1);
+        beverage.description();
     }
 
 }

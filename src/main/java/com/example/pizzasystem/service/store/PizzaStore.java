@@ -1,17 +1,7 @@
 package com.example.pizzasystem.service.store;
 
 import com.example.pizzasystem.service.pizza.base.Pizza;
-import com.example.pizzasystem.service.pizza.decorator.bake.HighTemperature;
-import com.example.pizzasystem.service.pizza.decorator.bake.LongTime;
-import com.example.pizzasystem.service.pizza.decorator.box.Dine;
-import com.example.pizzasystem.service.pizza.decorator.box.TakeOut;
-import com.example.pizzasystem.service.pizza.decorator.cut.TenSlices;
-import com.example.pizzasystem.service.pizza.decorator.cut.TwelveSlices;
-import com.example.pizzasystem.service.pizza.decorator.prepare.LargeSize;
-import com.example.pizzasystem.service.pizza.decorator.prepare.MoreCheese;
-import com.example.pizzasystem.service.pizza.decorator.prepare.MoreSauce;
-import com.example.pizzasystem.service.pizza.decorator.prepare.MoreToppings;
-import com.example.pizzasystem.service.pizza.order.PizzaOrder;
+import com.example.pizzasystem.service.order.BaseOrder;
 
 /**
  * @author https://github.com/anlowee
@@ -23,17 +13,17 @@ import com.example.pizzasystem.service.pizza.order.PizzaOrder;
  */
 public abstract class PizzaStore {
 
-    public Pizza orderPizza(PizzaOrder pizzaOrder) {
+    public Pizza orderPizza(BaseOrder baseOrder) {
         // first step is to choose a base-type of pizza in america-style
-        Pizza pizza = createPizza(pizzaOrder);
+        Pizza pizza = createPizza(baseOrder);
         return pizza;
     }
 
     /**
      * factory method
-     * @param pizzaOrder base pizza type
+     * @param baseOrder base pizza type
      * @return a pizzal
      */
-    abstract Pizza createPizza(PizzaOrder pizzaOrder);
+    abstract Pizza createPizza(BaseOrder baseOrder);
 
 }

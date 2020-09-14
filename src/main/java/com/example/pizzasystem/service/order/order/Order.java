@@ -1,7 +1,7 @@
-package com.example.pizzasystem.service.pizza.order.order;
+package com.example.pizzasystem.service.order.order;
 
 import com.example.pizzasystem.service.pizza.base.Pizza;
-import com.example.pizzasystem.service.pizza.order.PizzaOrder;
+import com.example.pizzasystem.service.order.BaseOrder;
 import com.example.pizzasystem.service.store.PizzaStore;
 
 import java.util.ArrayList;
@@ -25,16 +25,16 @@ public abstract class Order {
     /**
      * the actual order passed in as a parameter
      */
-    protected List<PizzaOrder> pizzaOrders;
+    protected List<BaseOrder> baseOrders;
 
     public abstract List<Pizza> execute();
 
     protected List<Pizza> makePizzas() {
         List<Pizza> pizzas = new ArrayList<>();
         Double totCost = 0.0;
-        for (PizzaOrder pizzaOrder : pizzaOrders) {
+        for (BaseOrder baseOrder : baseOrders) {
             System.out.println("##################################");
-            Pizza pizza = pizzaStore.orderPizza(pizzaOrder);
+            Pizza pizza = pizzaStore.orderPizza(baseOrder);
             pizza.description();
             totCost += pizza.cost();
             pizzas.add(pizza);

@@ -14,6 +14,7 @@ import lombok.Setter;
 public class Menu {
     private volatile static Menu uniqueInstance;
 
+    // pizza price
     @Setter@Getter
     private Double cheesePizzaPrice;
     @Setter@Getter
@@ -31,6 +32,20 @@ public class Menu {
     @Setter@Getter
     private Double morePepperoniPrice;
 
+    // beverage price
+    @Setter@Getter
+    private Double coffeePrice;
+    @Setter@Getter
+    private Double milkTeaPrice;
+    @Setter@Getter
+    private Double additionalMilkPrice;
+    @Setter@Getter
+    private Double additionalMochaPrice;
+    @Setter@Getter
+    private Double additionalSoyPrice;
+    @Setter@Getter
+    private Double additionalWhipPrice;
+
     private Menu() {
         cheesePizzaPrice = 6.99;
         pepperoniPizzaPrice = 7.99;
@@ -40,6 +55,13 @@ public class Menu {
         moreSaucePrice = 0.99;
         moreToppingsPrice = 2.99;
         morePepperoniPrice = 1.99;
+
+        coffeePrice = 0.99;
+        milkTeaPrice = 1.99;
+        additionalMilkPrice = 0.99;
+        additionalMochaPrice = 1.29;
+        additionalSoyPrice = 0.59;
+        additionalWhipPrice = 0.99;
     }
 
     public static Menu getInstance() {

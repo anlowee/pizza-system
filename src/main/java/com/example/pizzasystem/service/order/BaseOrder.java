@@ -1,4 +1,4 @@
-package com.example.pizzasystem.service.pizza.order;
+package com.example.pizzasystem.service.order;
 
 import lombok.Data;
 
@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * @date 2020/9/11
  */
 @Data
-public class PizzaOrder {
+public class BaseOrder {
 
     private String type;
     private ArrayList<String> additions;

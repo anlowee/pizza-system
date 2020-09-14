@@ -14,7 +14,7 @@ import com.example.pizzasystem.service.pizza.decorator.prepare.MoreCheese;
 import com.example.pizzasystem.service.pizza.decorator.prepare.MoreSauce;
 import com.example.pizzasystem.service.pizza.decorator.prepare.MoreToppings;
 import com.example.pizzasystem.service.pizza.ingredient.factory.AmericaStylePizzaIngredientFactory;
-import com.example.pizzasystem.service.pizza.order.PizzaOrder;
+import com.example.pizzasystem.service.order.BaseOrder;
 
 /**
  * @author https://github.com/anlowee
@@ -26,9 +26,9 @@ import com.example.pizzasystem.service.pizza.order.PizzaOrder;
  */
 public class AmericaStylePizzaStore extends PizzaStore {
     @Override
-    public Pizza createPizza(PizzaOrder pizzaOrder) {
+    public Pizza createPizza(BaseOrder baseOrder) {
         Pizza pizza = null;
-        switch (pizzaOrder.getType()) {
+        switch (baseOrder.getType()) {
             case "Cheese":
                 pizza = new CheesePizza(new AmericaStylePizzaIngredientFactory());
                 break;
@@ -39,7 +39,7 @@ public class AmericaStylePizzaStore extends PizzaStore {
                 break;
         }
         assert pizza != null;
-        for (String addition : pizzaOrder.getAdditions()) {
+        for (String addition : baseOrder.getAdditions()) {
             switch (addition) {
                 // second step is to set prepare method
                 case "Large Size":

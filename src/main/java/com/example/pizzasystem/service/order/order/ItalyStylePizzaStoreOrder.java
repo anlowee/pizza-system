@@ -1,7 +1,7 @@
-package com.example.pizzasystem.service.pizza.order.order;
+package com.example.pizzasystem.service.order.order;
 
+import com.example.pizzasystem.service.order.BaseOrder;
 import com.example.pizzasystem.service.pizza.base.Pizza;
-import com.example.pizzasystem.service.pizza.order.PizzaOrder;
 import com.example.pizzasystem.service.store.ItalyStylePizzaStore;
 
 import java.util.List;
@@ -16,9 +16,9 @@ import java.util.List;
  */
 public class ItalyStylePizzaStoreOrder extends Order {
 
-    public ItalyStylePizzaStoreOrder(List<PizzaOrder> pizzaOrders) {
+    public ItalyStylePizzaStoreOrder(List<BaseOrder> baseOrders) {
         this.pizzaStore = new ItalyStylePizzaStore();
-        this.pizzaOrders = pizzaOrders;
+        this.baseOrders = baseOrders;
     }
 
     @Override
