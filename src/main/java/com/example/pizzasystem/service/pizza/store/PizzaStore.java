@@ -16,10 +16,6 @@ public abstract class PizzaStore {
     public Pizza orderPizza(PizzaOrder pizzaOrder) {
         Pizza pizza;
         pizza = createPizza(pizzaOrder);
-        pizza.prepare();
-        pizza.bake();
-        pizza.cut();
-        pizza.box();
 
         return pizza;
     }
