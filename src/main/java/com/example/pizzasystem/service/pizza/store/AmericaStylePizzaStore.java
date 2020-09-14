@@ -18,9 +18,9 @@ import com.example.pizzasystem.service.pizza.order.PizzaOrder;
  * @last-check-in anlowee
  * @date 2020/9/11
  */
-public class AmericaStylePizzaStore extends PizzaStore {
+public class AmericaStylePizzaStore implements PizzaStore {
     @Override
-    protected Pizza createPizza(PizzaOrder pizzaOrder) {
+    public Pizza createPizza(PizzaOrder pizzaOrder) {
         Pizza pizza = new AmericaStylePizza();
         for (String addition : pizzaOrder.getAdditions()) {
             switch (addition) {

@@ -11,15 +11,8 @@ import com.example.pizzasystem.service.pizza.order.PizzaOrder;
  * @last-check-in anlowee
  * @date 2020/9/11
  */
-public abstract class PizzaStore {
+public interface PizzaStore {
 
-    public Pizza orderPizza(PizzaOrder pizzaOrder) {
-        Pizza pizza;
-        pizza = createPizza(pizzaOrder);
-
-        return pizza;
-    }
-
-    protected abstract Pizza createPizza(PizzaOrder pizzaOrder);
+    Pizza createPizza(PizzaOrder pizzaOrder);
 
 }

@@ -22,7 +22,7 @@ class PizzaSystemApplicationTests {
         additions.add("10 Slices");
         additions.add("Dine");
         pizzaOrder.setAdditions(additions);
-        Pizza pizza = pizzaStore.orderPizza(pizzaOrder);
+        Pizza pizza = pizzaStore.createPizza(pizzaOrder);
         pizza.description();
     }
 
