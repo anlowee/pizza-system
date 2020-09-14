@@ -8,6 +8,7 @@ import com.example.pizzasystem.service.pizza.component.decorator.concrettedecora
 import com.example.pizzasystem.service.pizza.component.decorator.concrettedecorator.box.TakeOut;
 import com.example.pizzasystem.service.pizza.component.decorator.concrettedecorator.cut.TenSlices;
 import com.example.pizzasystem.service.pizza.component.decorator.concrettedecorator.cut.TwelveSlices;
+import com.example.pizzasystem.service.pizza.ingredient.factory.AmericaStylePizzaIngredientFactory;
 import com.example.pizzasystem.service.pizza.order.PizzaOrder;
 
 /**
@@ -21,7 +22,7 @@ import com.example.pizzasystem.service.pizza.order.PizzaOrder;
 public class AmericaStylePizzaStore implements PizzaStore {
     @Override
     public Pizza createPizza(PizzaOrder pizzaOrder) {
-        Pizza pizza = new AmericaStylePizza();
+        Pizza pizza = new AmericaStylePizza(new AmericaStylePizzaIngredientFactory());
         for (String addition : pizzaOrder.getAdditions()) {
             switch (addition) {
                 // first step is to choose a base-type of pizza in america-style

@@ -1,6 +1,7 @@
 package com.example.pizzasystem.service.pizza.component.concretecomponent.america;
 
 import com.example.pizzasystem.service.pizza.component.Pizza;
+import com.example.pizzasystem.service.pizza.ingredient.factory.PizzaIngredientFactory;
 
 /**
  * @author https://github.com/anlowee
@@ -12,9 +13,11 @@ import com.example.pizzasystem.service.pizza.component.Pizza;
  */
 public class AmericaStylePizza extends Pizza {
 
-    public AmericaStylePizza() {
+    PizzaIngredientFactory pizzaIngredientFactory;
+
+    public AmericaStylePizza(PizzaIngredientFactory pizzaIngredientFactory) {
         name = "america-style pizza";
-        dough = "thin crust dough";
+        dough = pizzaIngredientFactory.createDough();
         sauce = "marinara sauce";
     }
 

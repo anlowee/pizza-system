@@ -1,5 +1,6 @@
 package com.example.pizzasystem.service.pizza.component;
 
+import com.example.pizzasystem.service.pizza.ingredient.dough.Dough;
 import com.example.pizzasystem.service.pizza.topping.Topping;
 import lombok.Data;
 import lombok.Getter;
@@ -20,7 +21,7 @@ public abstract class Pizza {
     @Setter@Getter
     protected String name;
     @Setter@Getter
-    protected String dough;
+    protected Dough dough;
     @Setter@Getter
     protected String sauce;
     @Setter@Getter
@@ -28,7 +29,6 @@ public abstract class Pizza {
 
     public Pizza() {
         name = "a undefined pizza";
-        dough = "a undefined dough";
         sauce = "a undefined sauce";
     }
 
