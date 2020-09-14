@@ -1,4 +1,4 @@
-package com.example.pizzasystem.service.pizza.menu;
+package com.example.pizzasystem.service.menu;
 
 import lombok.Getter;
 import lombok.Setter;

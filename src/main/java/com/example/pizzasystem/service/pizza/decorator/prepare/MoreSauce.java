@@ -1,7 +1,7 @@
 package com.example.pizzasystem.service.pizza.decorator.prepare;
 
 import com.example.pizzasystem.service.pizza.base.Pizza;
-import com.example.pizzasystem.service.pizza.menu.Menu;
+import com.example.pizzasystem.service.menu.Menu;
 
 /**
  * @author https://github.com/anlowee

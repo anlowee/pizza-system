@@ -1,7 +1,7 @@
 package com.example.pizzasystem.service.pizza.base;
 
 import com.example.pizzasystem.service.pizza.ingredient.factory.PizzaIngredientFactory;
-import com.example.pizzasystem.service.pizza.menu.Menu;
+import com.example.pizzasystem.service.menu.Menu;
 import lombok.Setter;
 
 /**
