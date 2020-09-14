@@ -1,4 +1,4 @@
-package com.example.pizzasystem.service.pizza.store;
+package com.example.pizzasystem.service.store;
 
 import com.example.pizzasystem.service.pizza.base.Pizza;
 import com.example.pizzasystem.service.pizza.decorator.bake.HighTemperature;

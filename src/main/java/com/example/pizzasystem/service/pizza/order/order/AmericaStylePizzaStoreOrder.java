@@ -2,10 +2,8 @@ package com.example.pizzasystem.service.pizza.order.order;
 
 import com.example.pizzasystem.service.pizza.base.Pizza;
 import com.example.pizzasystem.service.pizza.order.PizzaOrder;
-import com.example.pizzasystem.service.pizza.store.AmericaStylePizzaStore;
-import com.example.pizzasystem.service.pizza.store.PizzaStore;
+import com.example.pizzasystem.service.store.AmericaStylePizzaStore;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

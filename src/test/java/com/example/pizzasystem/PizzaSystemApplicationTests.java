@@ -1,15 +1,9 @@
 package com.example.pizzasystem;
 
-import com.example.pizzasystem.service.pizza.base.Pizza;
-import com.example.pizzasystem.service.pizza.menu.Menu;
 import com.example.pizzasystem.service.pizza.order.OrderHandler;
 import com.example.pizzasystem.service.pizza.order.PizzaOrder;
-import com.example.pizzasystem.service.pizza.order.order.AmericaStylePizzaStoreOrder;
 import com.example.pizzasystem.service.pizza.order.order.ItalyStylePizzaStoreOrder;
 import com.example.pizzasystem.service.pizza.order.order.Order;
-import com.example.pizzasystem.service.pizza.store.AmericaStylePizzaStore;
-import com.example.pizzasystem.service.pizza.store.ItalyStylePizzaStore;
-import com.example.pizzasystem.service.pizza.store.PizzaStore;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

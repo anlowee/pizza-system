@@ -2,7 +2,7 @@ package com.example.pizzasystem.service.pizza.order.order;
 
 import com.example.pizzasystem.service.pizza.base.Pizza;
 import com.example.pizzasystem.service.pizza.order.PizzaOrder;
-import com.example.pizzasystem.service.pizza.store.ItalyStylePizzaStore;
+import com.example.pizzasystem.service.store.ItalyStylePizzaStore;
 
 import java.util.List;
 
