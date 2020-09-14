@@ -2,10 +2,8 @@ package com.example.pizzasystem.service.pizza.order.order;
 
 import com.example.pizzasystem.service.pizza.base.Pizza;
 import com.example.pizzasystem.service.pizza.order.PizzaOrder;
-import com.example.pizzasystem.service.pizza.store.AmericaStylePizzaStore;
-import com.example.pizzasystem.service.pizza.store.PizzaStore;
+import com.example.pizzasystem.service.pizza.store.ItalyStylePizzaStore;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,10 +14,10 @@ import java.util.List;
  * @last-check-in anlowee
  * @date 2020/9/14
  */
-public class AmericaStylePizzaStoreOrder extends Order {
+public class ItalyStylePizzaStoreOrder extends Order {
 
-    public AmericaStylePizzaStoreOrder(List<PizzaOrder> pizzaOrders) {
-        this.pizzaStore = new AmericaStylePizzaStore();
+    public ItalyStylePizzaStoreOrder(List<PizzaOrder> pizzaOrders) {
+        this.pizzaStore = new ItalyStylePizzaStore();
         this.pizzaOrders = pizzaOrders;
     }
 

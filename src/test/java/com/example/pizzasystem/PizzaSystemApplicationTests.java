@@ -5,6 +5,7 @@ import com.example.pizzasystem.service.pizza.menu.Menu;
 import com.example.pizzasystem.service.pizza.order.OrderHandler;
 import com.example.pizzasystem.service.pizza.order.PizzaOrder;
 import com.example.pizzasystem.service.pizza.order.order.AmericaStylePizzaStoreOrder;
+import com.example.pizzasystem.service.pizza.order.order.ItalyStylePizzaStoreOrder;
 import com.example.pizzasystem.service.pizza.order.order.Order;
 import com.example.pizzasystem.service.pizza.store.AmericaStylePizzaStore;
 import com.example.pizzasystem.service.pizza.store.ItalyStylePizzaStore;
@@ -20,7 +21,6 @@ class PizzaSystemApplicationTests {
 
     @Test
     void contextLoads() {
-        PizzaStore pizzaStore = new ItalyStylePizzaStore();
         PizzaOrder pizzaOrder = new PizzaOrder();
         pizzaOrder.setType("Pepperoni");
         ArrayList<String> additions = new ArrayList<>();
@@ -38,7 +38,7 @@ class PizzaSystemApplicationTests {
         pizzaOrders.add(pizzaOrder);
         pizzaOrders.add(pizzaOrder);
 
-        Order order = new AmericaStylePizzaStoreOrder(pizzaStore, pizzaOrders);
+        Order order = new ItalyStylePizzaStoreOrder(pizzaOrders);
         OrderHandler orderHandler = new OrderHandler();
         orderHandler.setOrder(order);
         orderHandler.handleOrder();
