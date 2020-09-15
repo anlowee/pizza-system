@@ -20,10 +20,11 @@ public abstract class Beverage {
         name = "an undefined beverage";
     }
 
-    public void description() {
-        System.out.println(name);
-        System.out.println(prepare());
-        System.out.printf("cost: %.2f\n", cost());
+    public String description() {
+        String description = name + "\n"
+                + prepare() + "\n"
+                + String.format("cost: %.2f\n", cost());
+        return description;
     }
 
     public abstract String prepare();

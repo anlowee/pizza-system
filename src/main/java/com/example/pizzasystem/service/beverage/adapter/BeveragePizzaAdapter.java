@@ -17,8 +17,8 @@ public class BeveragePizzaAdapter extends Pizza {
     }
 
     @Override
-    public void description() {
-        beverage.description();
+    public String description() {
+        return beverage.description();
     }
 
     @Override

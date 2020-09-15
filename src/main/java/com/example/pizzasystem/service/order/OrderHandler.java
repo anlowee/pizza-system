@@ -22,23 +22,37 @@ public class OrderHandler {
     @Setter
     private Order beverageOrder;
 
-    public List<Pizza> handleOrder() {
-        List<Pizza> foods = pizzaOrder.execute();
-        foods.addAll(beverageOrder.execute());
-        printReceipt(foods);
-        return foods;
+    public String handleOrder() {
+        List<Pizza> foods = null;
+        if (pizzaOrder != null) {
+            foods = pizzaOrder.execute();
+        }
+        if (beverageOrder != null) {
+            if (foods == null) {
+                foods = beverageOrder.execute();
+            } else {
+                foods.addAll(beverageOrder.execute());
+            }
+        }
+        if (foods != null) {
+            return printReceipt(foods);
+        } else {
+            return "No Order";
+        }
     }
 
-    public void printReceipt(List<Pizza> foods) {
-        System.out.println("##############RECEIPT##############");
+    public String printReceipt(List<Pizza> foods) {
+        StringBuilder receipt = new StringBuilder("##############RECEIPT##############\n");
         Double totCost = 0.0;
         for (Pizza food : foods) {
-            System.out.println("##################################");
-            food.description();
+            receipt.append("##################################\n");
+            receipt.append(food.description());
             totCost += food.cost();
         }
-        System.out.println("##################################");
-        System.out.printf("total cost: %.2f\n", totCost);
+        receipt.append("##################################\n")
+                .append(String.format("total cost: %.2f\n", totCost));
+        System.out.println(receipt.toString());
+        return receipt.toString();
     }
 
 }

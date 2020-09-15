@@ -32,17 +32,17 @@ public abstract class Pizza {
         name = "a undefined pizza";
     }
 
-    public void description() {
-        System.out.println(name + "\n"
+    public String description() {
+        String description = name + "\n"
                 + dough.prepare() + "\n"
                 + cheese.prepare() + "\n"
-                + sauce.prepare()
-        );
-        System.out.println(prepare());
-        System.out.println(bake());
-        System.out.println(cut());
-        System.out.println(box());
-        System.out.printf("cost: %.2f\n", cost());
+                + sauce.prepare() + "\n"
+                + prepare() + "\n"
+                + bake() + "\n"
+                + cut() + "\n"
+                + box() + "\n"
+                + String.format("cost: %.2f\n", cost());
+        return description;
     }
 
     public abstract String prepare();
