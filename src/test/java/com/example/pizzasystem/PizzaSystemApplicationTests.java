@@ -4,6 +4,7 @@ import com.example.pizzasystem.service.beverage.base.Beverage;
 import com.example.pizzasystem.service.beverage.factory.BeverageFactory;
 import com.example.pizzasystem.service.order.OrderHandler;
 import com.example.pizzasystem.service.order.BaseOrder;
+import com.example.pizzasystem.service.order.order.BeverageOrder;
 import com.example.pizzasystem.service.order.order.ItalyStylePizzaStoreOrder;
 import com.example.pizzasystem.service.order.order.Order;
 import org.junit.jupiter.api.Test;
@@ -36,8 +37,9 @@ class PizzaSystemApplicationTests {
 
         Order order = new ItalyStylePizzaStoreOrder(baseOrders);
         OrderHandler orderHandler = new OrderHandler();
-        orderHandler.setOrder(order);
-        orderHandler.handleOrder();
+        orderHandler.setPizzaOrder(order);
+
+        // beverage test
 
         BaseOrder baseOrder1 = new BaseOrder();
         baseOrder1.setType("Milk Tea");
@@ -46,10 +48,15 @@ class PizzaSystemApplicationTests {
         additions1.add("Mocha");
         additions1.add("Soy");
         additions1.add("Whip");
+        additions1.add("Tall Size");
         baseOrder1.setAdditions(additions1);
-        BeverageFactory beverageFactory = new BeverageFactory();
-        Beverage beverage = beverageFactory.createBeverage(baseOrder1);
-        beverage.description();
+        List<BaseOrder> baseOrders1 = new ArrayList<>();
+        baseOrders1.add(baseOrder1);
+        Order order1 = new BeverageOrder(baseOrders1);
+        orderHandler.setBeverageOrder(order1);
+
+        // handle
+        orderHandler.handleOrder();
     }
 
 }

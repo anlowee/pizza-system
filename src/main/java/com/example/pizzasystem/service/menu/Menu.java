@@ -45,6 +45,10 @@ public class Menu {
     private Double additionalSoyPrice;
     @Setter@Getter
     private Double additionalWhipPrice;
+    @Setter@Getter
+    private Double tallSizePrice;
+    @Setter@Getter
+    private Double ventiSizePrice;
 
     private Menu() {
         cheesePizzaPrice = 6.99;
@@ -62,6 +66,8 @@ public class Menu {
         additionalMochaPrice = 1.29;
         additionalSoyPrice = 0.59;
         additionalWhipPrice = 0.99;
+        tallSizePrice = 0.59;
+        ventiSizePrice = 0.99;
     }
 
     public static Menu getInstance() {

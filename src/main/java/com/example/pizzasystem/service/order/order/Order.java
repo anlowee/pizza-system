@@ -31,16 +31,10 @@ public abstract class Order {
 
     protected List<Pizza> makePizzas() {
         List<Pizza> pizzas = new ArrayList<>();
-        Double totCost = 0.0;
         for (BaseOrder baseOrder : baseOrders) {
-            System.out.println("##################################");
             Pizza pizza = pizzaStore.orderPizza(baseOrder);
-            pizza.description();
-            totCost += pizza.cost();
             pizzas.add(pizza);
         }
-        System.out.println("##################################");
-        System.out.printf("total cost: %.2f\n", totCost);
         return pizzas;
     }
 

@@ -3,10 +3,7 @@ package com.example.pizzasystem.service.beverage.factory;
 import com.example.pizzasystem.service.beverage.base.Beverage;
 import com.example.pizzasystem.service.beverage.base.Coffee;
 import com.example.pizzasystem.service.beverage.base.MilkTea;
-import com.example.pizzasystem.service.beverage.decorator.Milk;
-import com.example.pizzasystem.service.beverage.decorator.Mocha;
-import com.example.pizzasystem.service.beverage.decorator.Soy;
-import com.example.pizzasystem.service.beverage.decorator.Whip;
+import com.example.pizzasystem.service.beverage.decorator.*;
 import com.example.pizzasystem.service.order.BaseOrder;
 
 import java.util.List;
@@ -47,6 +44,12 @@ public class BeverageFactory {
                     break;
                 case "Whip":
                     beverage = new Whip(beverage);
+                    break;
+                case "Tall Size":
+                    beverage = new Tall(beverage);
+                    break;
+                case "Venti Size":
+                    beverage = new Venti(beverage);
                     break;
                 default:
                     break;
