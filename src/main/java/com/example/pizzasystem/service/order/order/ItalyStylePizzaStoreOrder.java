@@ -2,6 +2,7 @@ package com.example.pizzasystem.service.order.order;
 
 import com.example.pizzasystem.service.order.BaseOrder;
 import com.example.pizzasystem.service.pizza.base.Pizza;
+import com.example.pizzasystem.service.pizza.ingredient.factory.ItalyStylePizzaIngredientFactory;
 import com.example.pizzasystem.service.store.ItalyStylePizzaStore;
 
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.List;
 public class ItalyStylePizzaStoreOrder extends Order {
 
     public ItalyStylePizzaStoreOrder(List<BaseOrder> baseOrders) {
-        this.pizzaStore = new ItalyStylePizzaStore();
+        this.pizzaStore = new ItalyStylePizzaStore(new ItalyStylePizzaIngredientFactory());
         this.baseOrders = baseOrders;
     }
 

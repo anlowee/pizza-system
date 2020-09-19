@@ -12,6 +12,7 @@ import com.example.pizzasystem.service.pizza.decorator.cut.TwelveSlices;
 import com.example.pizzasystem.service.pizza.decorator.prepare.*;
 import com.example.pizzasystem.service.pizza.ingredient.factory.ItalyStylePizzaIngredientFactory;
 import com.example.pizzasystem.service.order.BaseOrder;
+import com.example.pizzasystem.service.pizza.ingredient.factory.PizzaIngredientFactory;
 
 /**
  * @author https://github.com/anlowee
@@ -22,15 +23,22 @@ import com.example.pizzasystem.service.order.BaseOrder;
  * @date 2020/9/14
  */
 public class ItalyStylePizzaStore extends PizzaStore {
+
+    PizzaIngredientFactory pizzaIngredientFactory;
+
+    public ItalyStylePizzaStore(PizzaIngredientFactory pizzaIngredientFactory) {
+        this.pizzaIngredientFactory = pizzaIngredientFactory;
+    }
+
     @Override
     Pizza createPizza(BaseOrder baseOrder) {
         Pizza pizza = null;
         switch (baseOrder.getType()) {
             case "Cheese":
-                pizza = new CheesePizza(new ItalyStylePizzaIngredientFactory());
+                pizza = new CheesePizza(pizzaIngredientFactory);
                 break;
             case "Pepperoni":
-                pizza = new PepperoniPizza(new ItalyStylePizzaIngredientFactory());
+                pizza = new PepperoniPizza(pizzaIngredientFactory);
                 break;
             default:
                 break;
