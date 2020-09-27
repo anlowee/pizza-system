@@ -8,6 +8,7 @@ import com.example.pizzasystem.service.order.order.ItalyStylePizzaStoreOrder;
 import com.example.pizzasystem.service.order.order.Order;
 import lombok.Data;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +21,7 @@ import java.util.List;
 @RestController
 public class PizzaOrderController {
 
-    @GetMapping("/api/america/order")
+    @PostMapping("/api/america/order")
     public String orderPizzasAtAmericaStyleStore(
             @RequestBody RequestBean requestBean) {
         Order pizzaOrdersIssue = new AmericaStylePizzaStoreOrder(requestBean.getPizzas());
@@ -31,7 +32,7 @@ public class PizzaOrderController {
         return orderHandler.handleOrder();
     }
 
-    @GetMapping("/api/italy/order")
+    @PostMapping("/api/italy/order")
     public String orderPizzasAtItalyStyleStore(
            @RequestBody RequestBean requestBean
     ) {
